@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "b66b1800-7730-4702-86ce-0883e3d73059",
+		"name": "5 - API testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19225859"
+	},
+	"item": [
+		{
+			"name": "GET latest",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/latest?apikey={{apikey}}",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"latest"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{apikey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET symbols",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/symbols?apikey={{apikey}}",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"symbols"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{apikey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET symbols RUB",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/latest?apikey={{apikey}}&base=RUB&symbols=EUR, USD, KPW",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"latest"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{apikey}}"
+						},
+						{
+							"key": "base",
+							"value": "RUB"
+						},
+						{
+							"key": "symbols",
+							"value": "EUR, USD, KPW"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET symbols EUR, USD, RUB",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/latest?apikey={{apikey}}&symbols=EUR, USD, RUB",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"latest"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{apikey}}"
+						},
+						{
+							"key": "symbols",
+							"value": "EUR, USD, RUB"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET convert RUB-USD",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "apikey",
+						"value": "3gkmhC4P6BP6cOsgCVNixUKCBsdKpbQW",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/convert?apikey={{apikey}}&from=RUB&to=USD&amount=18101",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"convert"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{apikey}}"
+						},
+						{
+							"key": "from",
+							"value": "RUB"
+						},
+						{
+							"key": "to",
+							"value": "USD"
+						},
+						{
+							"key": "amount",
+							"value": "18101"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apikey",
+			"value": "3gkmhC4P6BP6cOsgCVNixUKCBsdKpbQW",
+			"type": "string"
+		},
+		{
+			"key": "BASE_URL",
+			"value": "https://api.apilayer.com/fixer",
+			"type": "string"
+		}
+	]
+}
